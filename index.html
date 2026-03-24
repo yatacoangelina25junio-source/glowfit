@@ -7,146 +7,138 @@
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap" rel="stylesheet">
 
 <style>
-/* ---------- FONDO ANIMADO ---------- */
-body {
+body{
   font-family: Poppins, sans-serif;
-  margin: 0;
-  overflow-x: hidden;
-  background: linear-gradient(-45deg, #ffe6f0, #ffb3d1, #ff99cc, #ff66b3);
-  background-size: 400% 400%;
-  animation: gradientBG 20s ease infinite;
+  margin:0;
+  background: #ffe6f0;
 }
-@keyframes gradientBG {
-  0% {background-position:0% 50%;}
-  50% {background-position:100% 50%;}
-  100% {background-position:0% 50%;}
-}
-
-/* ---------- INSIGNIA ---------- */
-.logo-colegio {
-  position: fixed;
-  top: 10px;
-  right: 10px;
-  width: 70px;
-  filter: hue-rotate(300deg);
-  z-index: 100;
-}
-
-/* ---------- HERO / PORTADA ---------- */
-.hero {
-  height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  position: relative;
-  overflow: hidden;
+.hero{
   background: url('https://i.imgur.com/j2djUQh.png') center/cover no-repeat;
+  height:100vh;
+  display:flex;
+  align-items:center;
+  justify-content:center;
 }
-.overlay {
+.overlay{
   background: rgba(255,105,180,0.6);
-  padding: 40px;
-  border-radius: 20px;
-  color: white;
-  text-align: center;
-  animation: zoomIn 1s ease;
+  padding:40px;
+  border-radius:20px;
+  color:white;
+  text-align:center;
 }
-@keyframes zoomIn {
-  0% { transform: scale(0.9); opacity: 0; }
-  100% { transform: scale(1); opacity: 1; }
+.overlay h1{
+  font-size: 4rem;
 }
-.overlay h1 { font-size: 4rem; margin-bottom: 20px; }
-.overlay p { font-size: 1.2rem; max-width: 600px; margin: 0 auto 20px; }
-
-/* ---------- NAV ---------- */
-nav {
-  background: rgba(255,77,136,0.9);
-  padding: 10px;
-  text-align: center;
+.overlay p{
+  max-width:600px;
+  margin:10px auto;
+}
+nav{
+  background:#ff4d88;
+  padding:10px;
+  text-align:center;
   position: sticky;
-  top: 0;
+  top:0;
   z-index: 50;
 }
-nav a {
-  color: white;
-  margin: 10px;
-  text-decoration: none;
-  font-weight: 600;
+nav a{
+  color:white;
+  margin:10px;
+  text-decoration:none;
+  font-weight:600;
 }
-
-/* ---------- FRASES MOTIVADORAS ---------- */
-.frases {
-  text-align: center;
-  margin: 20px 0;
-  font-size: 1.5rem;
-  font-weight: 600;
-  color: #ff1a75;
-  height: 2em;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: opacity 0.5s;
-}
-
-/* ---------- CARDS ---------- */
-.card {
+.card{
   background: rgba(255,240,245,0.8);
-  margin: 15px;
-  padding: 20px;
-  border-radius: 20px;
-  text-align: center;
+  margin:15px;
+  padding:20px;
+  border-radius:20px;
+  text-align:center;
   transition: transform 0.3s, box-shadow 0.3s;
 }
-.card:hover {
+.card:hover{
   transform: translateY(-5px);
   box-shadow: 0 8px 20px rgba(255,0,120,0.3);
 }
-.intro {
+.intro{
   background: rgba(255,230,240,0.8);
-  padding: 10px;
-  border-left: 5px solid #ff4d88;
-  margin-bottom: 10px;
+  padding:10px;
+  border-left:5px solid #ff4d88;
+  margin-bottom:10px;
 }
-iframe {
-  width: 100%;
-  height: 250px;
-  border-radius: 15px;
+iframe{
+  width:100%;
+  height:250px;
+  border-radius:15px;
   transition: transform 0.3s;
 }
-iframe:hover { transform: scale(1.05); }
-
-/* ---------- BOTONES ---------- */
-.btn {
-  display: inline-block;
-  padding: 10px 20px;
-  background: #ff4d88;
-  color: white;
-  border-radius: 10px;
-  text-decoration: none;
-  font-weight: 600;
-  transition: 0.3s;
+iframe:hover{transform:scale(1.05);}
+.btn{
+  display:inline-block;
+  padding:10px 20px;
+  background:#ff4d88;
+  color:white;
+  border-radius:10px;
+  text-decoration:none;
+  font-weight:600;
+  transition:0.3s;
 }
-.btn:hover { background: #ff1a75; transform: scale(1.1); }
+.btn:hover{
+  background:#ff1a75;
+  transform:scale(1.1);
+}
+.frases{
+  text-align:center;
+  margin:20px 0;
+  font-size:1.5rem;
+  font-weight:600;
+  color:#ff1a75;
+  height:2em;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+.logo-colegio{
+  position: fixed;
+  top:10px;
+  right:10px;
+  width:70px;
+  z-index:100;
+}
 
-/* ---------- CORAZONES FLOTANTES ---------- */
-.heart {
+/* Corazones dispersos */
+.heart{
   position: fixed;
   font-size: 1.5rem;
   animation: floatUp linear infinite;
-  z-index: 0;
+  z-index:0;
 }
-@keyframes floatUp {
-  0% { transform: translateY(100vh) translateX(0); opacity: 1; }
-  100% { transform: translateY(-10vh) translateX(50px); opacity: 0; }
+@keyframes floatUp{
+  0%{transform:translateY(100vh) translateX(0); opacity:1;}
+  100%{transform:translateY(-10vh) translateX(50px); opacity:0;}
 }
+
+/* Pie de página */
+.footer{
+  text-align:center;
+  font-size:0.8rem;
+  color:#ff1a75;
+  margin:30px 0;
+}
+
+/* Comentarios */
+#comentarios { margin: 30px 0; }
+#comentariosPublicos .card { text-align:left; background: rgba(255,230,240,0.8); padding:15px; margin:10px auto; border-radius:15px; max-width:600px; }
+#comentariosPublicos .card h4 { margin:0 0 5px 0; color:#ff1a75; }
+#comentariosPublicos .card p { margin:0; }
 </style>
 </head>
 
 <body>
 
 <!-- INSIGNIA -->
-<img src="https://i.imgur.com/MprwWbS.png" class="logo-colegio">
+<img src="https://i.imgur.com/glcN62w.png" class="logo-colegio" style="background: transparent;">
 
-<!-- CORAZONES FLOTANTES -->
+<!-- Corazones flotando -->
 <script>
 for(let c=0;c<15;c++){
   const heart=document.createElement('div');
@@ -182,102 +174,171 @@ for(let c=0;c<15;c++){
   <a href="#videos">🎥 Ejercicios</a>
 </nav>
 
-<!-- SECCIÓN LUGARES -->
+<!-- LUGARES -->
 <section id="lugares">
-  <h2>📍 Lugares</h2>
-  <p class="intro">Mantenerte activo no siempre requiere un gimnasio...</p>
-  <div class="card">🌳 Strength Club Gym — Gimnasio con buena valoración y espacio para entrenar fuerza y cardio.</div>
-  <div class="card">🏟️ Jason Gym — Centro de entrenamiento con equipo variado para tus rutinas.</div>
-  <div class="card">🏋️ Gimnasio Creyentes del Fitness — Gimnasio popular con excelentes reseñas.</div>
-  <div class="card">💪 Olympus GYM — Gimnasio completo y bien valorado en Cañete.</div>
-  <div class="card">🏋️‍♂️ RDX Gym Fitness Center Cañete — Centro fitness con opciones de entrenamiento personalizado.</div>
-  <div class="card">🏋️ Margot gym — Gimnasio local con buena puntuación.</div>
-  <div class="card">🏃‍♂️ Traffic Gym — Opción para entrenar todo tipo de rutinas.</div>
-  <div class="card">💪 Full training Fitness — Gimnasio con entrenamiento integral ideal para mantenerte en forma.</div>
+<h2>📍 Lugares</h2>
+<p class="intro">Mantenerte activo no siempre requiere un gimnasio...</p>
+<div class="card">Strength Club Gym — Gimnasio con buena valoración y espacio para entrenar fuerza y cardio.</div>
+<div class="card">Jason Gym — Centro de entrenamiento con equipo variado para tus rutinas.</div>
+<div class="card">Gimnasio Creyentes del Fitness — Gimnasio popular con excelentes reseñas.</div>
+<div class="card">Olympus GYM — Gimnasio completo y bien valorado en Cañete.</div>
+<div class="card">RDX Gym Fitness Center Cañete — Centro fitness con opciones de entrenamiento personalizado.</div>
+<div class="card">Margot gym — Gimnasio local con buena puntuación.</div>
+<div class="card">Traffic Gym — Opción para entrenar todo tipo de rutinas.</div>
+<div class="card">Full training Fitness — Gimnasio con entrenamiento integral ideal para mantenerte en forma.</div>
+<div class="card">Coliseo Municipal “Lolo Fernández” – Estadio y espacio abierto donde puedes trotar, correr o hacer ejercicios de pista y campo.</div>
+<div class="card">Centro de Esparcimiento (Av. Mariscal Benavides) – Zona pública amplia donde puedes caminar, trotar, estirarte o ejercitarte al aire libre.</div>
+<div class="card">💡 Tip: También puedes usar plazas y calles amplias de San Vicente para caminar o trotar por las mañanas o tardes — ¡es ejercicio gratis y al aire libre!</div>
 </section>
 
-<!-- SECCIÓN MAPA -->
+<!-- MAPA -->
 <section id="mapa">
-  <h2>🗺️ Mapa</h2>
-  <div class="card">
-    <iframe src="https://www.google.com/maps?q=San+Vicente+de+Cañete&output=embed" allowfullscreen></iframe>
-  </div>
+<h2>🗺️ Mapa</h2>
+<div class="card">
+<iframe src="https://www.google.com/maps?q=San+Vicente+de+Cañete&output=embed"></iframe>
+</div>
 </section>
 
-<!-- SECCIÓN NUTRICIÓN -->
+<!-- NUTRICIÓN -->
 <section id="nutricion">
-  <h2>🥗 Plan semanal</h2>
-  <p class="intro">Una buena alimentación es clave...</p>
-  <div class="card">🍓 Lunes: Avena con frutas + Pechuga de pollo + Sopa de verduras</div>
-  <div class="card">🥑 Martes: Yogur con granola + Lentejas guisadas + Tortilla de espinaca</div>
-  <div class="card">🍗 Miércoles: Pan integral con aguacate + Salmón al horno + Crema de calabaza</div>
-  <div class="card">🥗 Jueves: Smoothie de plátano + Pollo al curry + Ensalada de garbanzos</div>
-  <div class="card">🍎 Viernes: Avena con manzana + Filete de pescado + Sopa de lentejas</div>
-  <div class="card">🥚 Sábado: Huevos revueltos + Pasta integral + Crema de brócoli</div>
-  <div class="card">🍇 Domingo: Yogur con frutas + Pollo asado + Ensalada de quinoa</div>
+<h2>🥗 Plan semanal</h2>
+<p class="intro">Una buena alimentación es clave...</p>
+<div class="card">Lunes: Desayuno: Avena con frutas + nueces + té verde. Almuerzo: Pechuga de pollo + quinoa + ensalada. Cena: Sopa de verduras + pescado + brócoli.</div>
+<div class="card">Martes: Yogur + granola + jugo natural. Almuerzo: Lentejas + arroz integral + ensalada. Cena: Tortilla de espinaca + ensalada.</div>
+<div class="card">Miércoles: Pan integral con aguacate y huevo + té. Almuerzo: Salmón + puré de camote + ensalada. Cena: Crema de calabaza + pechuga de pavo + espárragos.</div>
+<div class="card">Jueves: Smoothie + almendras. Almuerzo: Pollo al curry + arroz integral + ensalada. Cena: Ensalada de garbanzos + tortilla de huevo.</div>
+<div class="card">Viernes: Avena con manzana + té verde. Almuerzo: Filete de pescado + arroz con verduras + ensalada. Cena: Sopa de lentejas + ensalada + pan integral.</div>
+<div class="card">Sábado: Huevos revueltos + pan integral + jugo. Almuerzo: Pasta integral con salsa de tomate + ensalada. Cena: Crema de brócoli + pechuga de pavo + ensalada.</div>
+<div class="card">Domingo: Yogur con frutas + avena + té. Almuerzo: Pollo asado + papas al horno + ensalada. Cena: Ensalada de quinoa + filete de pescado.</div>
 </section>
 
-<!-- SECCIÓN EVENTOS -->
+<!-- EVENTOS -->
 <section id="eventos">
-  <h2>📢 Eventos</h2>
-  <p class="intro">Participar en eventos es importante...</p>
-  <div class="card"><img src="https://i.imgur.com/i0IUibM.jpg" alt="Evento 1"><button onclick="inscribirse(this)">Inscribirse</button></div>
-  <div class="card"><img src="https://i.imgur.com/6gMKhmS.jpg" alt="Evento 2"><button onclick="inscribirse(this)">Inscribirse</button></div>
+<h2>📢 Eventos</h2>
+<p class="intro">Participar en eventos es importante...</p>
+<div class="card"><img src="https://i.imgur.com/6gMKhmS.jpg"><button onclick="inscribirse(this)">Inscribirse</button></div>
+<div class="card"><img src="https://i.imgur.com/GfMzRk5.jpg"><button onclick="inscribirse(this)">Inscribirse</button></div>
+<div class="card"><img src="https://i.imgur.com/9E4Q9gv.jpg"><button onclick="inscribirse(this)">Inscribirse</button></div>
+<div class="card"><img src="https://i.imgur.com/lzav0yV.jpg"><button onclick="inscribirse(this)">Inscribirse</button></div>
+<div class="card"><img src="https://i.imgur.com/d0mMuKr.jpg"><button onclick="inscribirse(this)">Inscribirse</button></div>
+<div class="card"><img src="https://i.imgur.com/Ke1MtFA.jpg"><button onclick="inscribirse(this)">Inscribirse</button></div>
 </section>
 
-<!-- SECCIÓN VIDEOS -->
+<!-- EJERCICIOS / VIDEOS CON MINIATURAS -->
 <section id="videos">
-  <h2>🎥 Gym Virtual</h2>
-  <p class="intro">Ejercicios fáciles para empezar...</p>
-  <div class="card"><iframe src="https://www.youtube.com/embed/U90aYYvttVM" allowfullscreen></iframe></div>
-  <div class="card"><iframe src="https://www.youtube.com/embed/NncmQk5a9Dg" allowfullscreen></iframe></div>
-  <div class="card"><iframe src="https://www.youtube.com/embed/JWCG90eOvqA" allowfullscreen></iframe></div>
-  <div class="card"><iframe src="https://www.youtube.com/embed/QhuMeVnn_qU" allowfullscreen></iframe></div>
-  <div class="card"><iframe src="https://www.youtube.com/embed/wL87zJ6wgxw" allowfullscreen></iframe></div>
-  <div class="card"><iframe src="https://www.youtube.com/embed/0YRX4pEP6pY" allowfullscreen></iframe></div>
-  <div class="card"><iframe src="https://www.youtube.com/embed/yGXwjAoQciQ" allowfullscreen></iframe></div>
-  <div class="card"><iframe src="https://www.youtube.com/embed/k_u8obkaGE4" allowfullscreen></iframe></div>
+<h2>🎥 Gym Virtual</h2>
+<p class="intro">Ejercicios fáciles para empezar...</p>
+
+<div class="card video-card" data-video="U90aYYvttVM">
+  <img src="https://img.youtube.com/vi/U90aYYvttVM/hqdefault.jpg" alt="Video 1" style="width:100%; border-radius:15px; cursor:pointer;">
+</div>
+<div class="card video-card" data-video="NncmQk5a9Dg">
+  <img src="https://img.youtube.com/vi/NncmQk5a9Dg/hqdefault.jpg" alt="Video 2" style="width:100%; border-radius:15px; cursor:pointer;">
+</div>
+<div class="card video-card" data-video="JWCG90eOvqA">
+  <img src="https://img.youtube.com/vi/JWCG90eOvqA/hqdefault.jpg" alt="Video 3" style="width:100%; border-radius:15px; cursor:pointer;">
+</div>
+<div class="card video-card" data-video="QhuMeVnn_qU">
+  <img src="https://img.youtube.com/vi/QhuMeVnn_qU/hqdefault.jpg" alt="Video 4" style="width:100%; border-radius:15px; cursor:pointer;">
+</div>
+<div class="card video-card" data-video="wL87zJ6wgxw">
+  <img src="https://img.youtube.com/vi/wL87zJ6wgxw/hqdefault.jpg" alt="Video 5" style="width:100%; border-radius:15px; cursor:pointer;">
+</div>
+<div class="card video-card" data-video="0YRX4pEP6pY">
+  <img src="https://img.youtube.com/vi/0YRX4pEP6pY/hqdefault.jpg" alt="Video 6" style="width:100%; border-radius:15px; cursor:pointer;">
+</div>
+<div class="card video-card" data-video="yGXwjAoQciQ">
+  <img src="https://img.youtube.com/vi/yGXwjAoQciQ/hqdefault.jpg" alt="Video 7" style="width:100%; border-radius:15px; cursor:pointer;">
+</div>
+<div class="card video-card" data-video="k_u8obkaGE4">
+  <img src="https://img.youtube.com/vi/k_u8obkaGE4/hqdefault.jpg" alt="Video 8" style="width:100%; border-radius:15px; cursor:pointer;">
+</div>
 </section>
+
+<!-- SECCIÓN COMENTARIOS -->
+<section id="comentarios">
+  <h2>💬 Comentarios</h2>
+  <p class="intro">Déjanos tu opinión o experiencia sobre la página. ¡Nos encanta leer tus mensajes!</p>
+
+  <div class="card">
+    <input type="text" id="nombre" placeholder="Tu nombre" style="width:90%; padding:10px; margin-bottom:10px; border-radius:10px; border:1px solid #ff4d88;">
+    <textarea id="mensaje" placeholder="Tu comentario..." style="width:90%; padding:10px; margin-bottom:10px; border-radius:10px; border:1px solid #ff4d88;"></textarea>
+    <button onclick="agregarComentario(this)" class="btn">Enviar</button>
+  </div>
+
+  <div id="comentariosPublicos"></div>
+</section>
+
+<!-- PIE DE PÁGINA -->
+<div class="footer">
+Alumnas: Angeline Luciana Yataco Llanos, Maryfé Zapata Torrejon, Luna Palomino Paucar y Valentina Guerrero Meza
+</div>
 
 <audio id="clickSound" src="https://www.soundjay.com/buttons/sounds/button-16.mp3"></audio>
 
 <script>
-/* FRASES MOTIVADORAS */
-const frases = [
-"El esfuerzo de hoy es la fuerza de mañana",
-"No se trata de ser el mejor, sino de ser mejor que ayer",
-"Cada gota de sudor te acerca a tu meta",
-"Tu cuerpo puede más de lo que tu mente cree",
-"No pares cuando estés cansado, para cuando hayas terminado",
-"El dolor de hoy es la victoria de mañana",
-"Transforma tu energía en acción",
-"Hazlo por ti, no por los demás",
-"No cuentes los días, haz que los días cuenten",
-"La disciplina vence a la motivación cuando ésta falla",
-"Un paso más siempre vale la pena",
-"El movimiento es vida; muévete por ti",
-"Hoy entrenas, mañana agradeces",
-"Los límites solo existen en tu mente",
-"Pequeños esfuerzos diarios crean grandes cambios"
+// Frases motivadoras
+const frases=[
+  "El esfuerzo de hoy es la fuerza de mañana",
+  "No se trata de ser el mejor, sino de ser mejor que ayer",
+  "Cada gota de sudor te acerca a tu meta",
+  "Tu cuerpo puede más de lo que tu mente cree",
+  "No pares cuando estés cansado, para cuando hayas terminado",
+  "El dolor de hoy es la victoria de mañana",
+  "Transforma tu energía en acción",
+  "Hazlo por ti, no por los demás",
+  "No cuentes los días, haz que los días cuenten",
+  "La disciplina vence a la motivación cuando ésta falla",
+  "Un paso más siempre vale la pena",
+  "El movimiento es vida; muévete por ti",
+  "Hoy entrenas, mañana agradeces",
+  "Los límites solo existen en tu mente",
+  "Pequeños esfuerzos diarios crean grandes cambios"
 ];
 let i=0;
-const fraseEl=document.getElementById("frase");
 setInterval(()=>{
-  fraseEl.style.opacity=0;
-  setTimeout(()=>{
-    fraseEl.innerText=frases[i];
-    fraseEl.style.opacity=1;
-    i=(i+1)%frases.length;
-  },500);
+  document.getElementById("frase").innerText=frases[i];
+  i=(i+1)%frases.length;
 },3000);
 
-/* INSCRIPCIÓN EVENTOS */
+// Botón inscribirse
 function inscribirse(b){
   document.getElementById("clickSound").play();
   b.innerText="💖 ¡Inscrito!";
-  b.disabled=true;
-  b.style.opacity=0.7;
 }
+
+// Agregar comentarios
+function agregarComentario(boton){
+  const nombre=document.getElementById('nombre').value.trim();
+  const mensaje=document.getElementById('mensaje').value.trim();
+  if(nombre && mensaje){
+    const contenedor=document.getElementById('comentariosPublicos');
+    const card=document.createElement('div');
+    card.className='card';
+    card.innerHTML=`<h4>${nombre}</h4><p>${mensaje}</p>`;
+    contenedor.prepend(card);
+    document.getElementById('nombre').value='';
+    document.getElementById('mensaje').value='';
+  } else {
+    alert('Por favor completa ambos campos antes de enviar');
+  }
+}
+
+// Miniaturas de videos clicables
+document.querySelectorAll('.video-card').forEach(card => {
+  card.addEventListener('click', function(){
+    const videoId = card.dataset.video;
+    const iframe = document.createElement('iframe');
+    iframe.src = `https://www.youtube.com/embed/${videoId}?autoplay=1`;
+    iframe.allow = "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture";
+    iframe.allowFullscreen = true;
+    iframe.style.width = "100%";
+    iframe.style.height = "250px";
+    iframe.style.borderRadius = "15px";
+    card.innerHTML = "";
+    card.appendChild(iframe);
+  });
+});
 </script>
 
 </body>
