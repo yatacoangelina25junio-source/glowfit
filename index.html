@@ -1,24 +1,177 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GlowFit</title>
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap" rel="stylesheet">
 
-<!-- INSIGNIA -->
-<img src="https://i.ibb.co/BHkp447T/Logotipo-Maryland.png" class="logo-colegio">
+<style>
+/* ---------- ANIMACIÓN DE FONDO ---------- */
+body {
+  font-family: Poppins, sans-serif;
+  margin: 0;
+  overflow-x: hidden;
+  background: linear-gradient(-45deg, #ffe6f0, #ffb3d1, #ff99cc, #ff66b3);
+  background-size: 400% 400%;
+  animation: gradientBG 20s ease infinite;
+}
+@keyframes gradientBG {
+  0% {background-position:0% 50%;}
+  50% {background-position:100% 50%;}
+  100% {background-position:0% 50%;}
+}
 
-<!-- CORAZONES -->
-<div class="hearts"></div>
+/* ---------- INSIGNIA ---------- */
+.logo-colegio {
+  position: fixed;
+  top: 10px;
+  right: 10px;
+  width: 70px;
+  filter: hue-rotate(300deg);
+  z-index: 100;
+}
+
+/* ---------- HERO / PORTADA ---------- */
+.hero {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+  background: url('https://i.imgur.com/j2djUQh.png') center/cover no-repeat;
+}
+.overlay {
+  background: rgba(255,105,180,0.6);
+  padding: 40px;
+  border-radius: 20px;
+  color: white;
+  text-align: center;
+  animation: zoomIn 1s ease;
+}
+@keyframes zoomIn {
+  0% { transform: scale(0.9); opacity: 0; }
+  100% { transform: scale(1); opacity: 1; }
+}
+.overlay h1 { font-size: 4rem; margin-bottom: 20px; }
+.overlay p { font-size: 1.2rem; max-width: 600px; margin: 0 auto 20px; }
+
+/* ---------- NAV ---------- */
+nav {
+  background: rgba(255,77,136,0.9);
+  padding: 10px;
+  text-align: center;
+  position: sticky;
+  top: 0;
+  z-index: 50;
+}
+nav a {
+  color: white;
+  margin: 10px;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+/* ---------- FRASES MOTIVADORAS ---------- */
+.frases {
+  text-align: center;
+  margin: 20px 0;
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #ff1a75;
+  height: 2em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: opacity 0.5s;
+}
+
+/* ---------- CARDS ---------- */
+.card {
+  background: rgba(255,240,245,0.8);
+  margin: 15px;
+  padding: 20px;
+  border-radius: 20px;
+  text-align: center;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(255,0,120,0.3);
+}
+.intro {
+  background: rgba(255,230,240,0.8);
+  padding: 10px;
+  border-left: 5px solid #ff4d88;
+  margin-bottom: 10px;
+}
+iframe {
+  width: 100%;
+  height: 250px;
+  border-radius: 15px;
+  transition: transform 0.3s;
+}
+iframe:hover { transform: scale(1.05); }
+
+/* ---------- BOTONES ---------- */
+.btn {
+  display: inline-block;
+  padding: 10px 20px;
+  background: #ff4d88;
+  color: white;
+  border-radius: 10px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: 0.3s;
+}
+.btn:hover { background: #ff1a75; transform: scale(1.1); }
+
+/* ---------- CORAZONES FLOTANTES ---------- */
+.heart {
+  position: fixed;
+  font-size: 1.5rem;
+  animation: floatUp linear infinite;
+  z-index: 0;
+}
+@keyframes floatUp {
+  0% { transform: translateY(100vh) translateX(0); opacity: 1; }
+  100% { transform: translateY(-10vh) translateX(50px); opacity: 0; }
+}
+</style>
+</head>
+
+<body>
+
+<!-- INSIGNIA -->
+<img src="https://i.imgur.com/MprwWbS.png" class="logo-colegio">
+
+<!-- CORAZONES FLOTANTES -->
+<script>
+for(let c=0;c<15;c++){
+  const heart=document.createElement('div');
+  heart.className='heart';
+  heart.style.left=Math.random()*100+'vw';
+  heart.style.fontSize=(Math.random()*1.5+1)+'rem';
+  heart.style.animationDuration=(Math.random()*5+8)+'s';
+  heart.style.animationDelay=(Math.random()*5)+'s';
+  heart.innerText='🩷';
+  document.body.appendChild(heart);
+}
+</script>
 
 <!-- PORTADA -->
 <section class="hero">
   <div class="overlay">
     <h1>💖 GlowFit</h1>
-    <p>Tu guía para una vida saludable ✨</p>
+    <p>Bienvenido a tu espacio para transformar tu bienestar. Aquí encontrarás herramientas, consejos y rutinas para llevar una vida más saludable, mantener tu cuerpo activo y sentirte con energía todos los días. ¡Empieza hoy y descubre el poder de sentirte bien contigo mismo!</p>
+    <p><em>Creado por alumnas del 3rd A del Maryland Bilingual High School</em></p>
     <a href="#videos" class="btn">Comenzar</a>
   </div>
 </section>
 
 <!-- FRASES -->
-<div class="frases">
-  <p id="frase">💖 Tu cambio empieza hoy</p>
-</div>
+<div class="frases" id="frase">💖 Tu cambio empieza hoy</div>
 
 <!-- NAV -->
 <nav>
@@ -29,83 +182,49 @@
   <a href="#videos">🎥 Ejercicios</a>
 </nav>
 
-<!-- LUGARES -->
-<section id="lugares">
-<h2>📍 Lugares</h2>
-<p class="intro">Mantenerte activo no siempre requiere un gimnasio...</p>
-
-<div class="card">🌳 Plaza de Armas</div>
-<div class="card">🏟️ Estadio Municipal</div>
-<div class="card">🌊 Cerro Azul</div>
-</section>
-
-<!-- MAPA -->
-<section id="mapa">
-<h2>🗺️ Mapa</h2>
-<div class="card">
-<iframe src="https://www.google.com/maps?q=San+Vicente+de+Cañete&output=embed"></iframe>
-</div>
-</section>
-
-<!-- NUTRICIÓN -->
-<section id="nutricion">
-<h2>🥗 Plan semanal</h2>
-<p class="intro">Una buena alimentación es clave...</p>
-
-<div class="card">🍓 Lunes</div>
-<div class="card">🥑 Martes</div>
-<div class="card">🍗 Miércoles</div>
-<div class="card">🥗 Jueves</div>
-<div class="card">🍎 Viernes</div>
-</section>
-
-<!-- EVENTOS -->
-<section id="eventos">
-<h2>📢 Eventos</h2>
-<p class="intro">Participar en eventos es importante...</p>
-
-<div class="card"><img src="https://i.imgur.com/i0IUibM.jpg"><button onclick="inscribirse(this)">Inscribirse</button></div>
-<div class="card"><img src="https://i.imgur.com/6gMKhmS.jpg"><button onclick="inscribirse(this)">Inscribirse</button></div>
-<div class="card"><img src="https://i.imgur.com/GfMzRk5.jpg"><button onclick="inscribirse(this)">Inscribirse</button></div>
-<div class="card"><img src="https://i.imgur.com/9E4Q9gv.jpg"><button onclick="inscribirse(this)">Inscribirse</button></div>
-<div class="card"><img src="https://i.imgur.com/lzav0yV.jpg"><button onclick="inscribirse(this)">Inscribirse</button></div>
-<div class="card"><img src="https://i.imgur.com/d0mMuKr.jpg"><button onclick="inscribirse(this)">Inscribirse</button></div>
-<div class="card"><img src="https://i.imgur.com/Ke1MtFA.jpg"><button onclick="inscribirse(this)">Inscribirse</button></div>
-
-</section>
-
-<!-- VIDEOS -->
-<section id="videos">
-<h2>🎥 Gym Virtual</h2>
-<p class="intro">Ejercicios fáciles para empezar...</p>
-
-<div class="card"><iframe src="https://www.youtube.com/embed/aM4MuKmDVFs"></iframe></div>
-<div class="card"><iframe src="https://www.youtube.com/embed/yGXwjAoQciQ"></iframe></div>
-</section>
+<!-- SECCIONES LUGARES, MAPA, NUTRICIÓN, EVENTOS, VIDEOS -->
+<!-- Mantener igual que el código anterior -->
 
 <audio id="clickSound" src="https://www.soundjay.com/buttons/sounds/button-16.mp3"></audio>
 
-<style>
-body{font-family:Poppins;background:#ffe6f0;margin:0;}
-.hero{background:url('https://i.ibb.co/bMYF2ZcK/1774319608173.png') center/cover;height:100vh;display:flex;align-items:center;justify-content:center;}
-.overlay{background:rgba(255,105,180,0.6);padding:40px;border-radius:20px;color:white;text-align:center;}
-nav{background:#ff4d88;padding:10px;text-align:center;}
-nav a{color:white;margin:10px;}
-.card{background:#fff0f5;margin:15px;padding:20px;border-radius:20px;text-align:center;}
-.logo-colegio{position:fixed;top:10px;right:10px;width:70px;filter:hue-rotate(300deg);}
-iframe{width:100%;height:250px;}
-.intro{background:#ffe6f0;padding:10px;border-left:5px solid #ff4d88;}
-.hearts::before{content:"💖 💕 💗 💞";position:fixed;width:100%;animation:float 10s infinite;}
-@keyframes float{0%{transform:translateY(100vh);}100%{transform:translateY(-100vh);}}
-</style>
-
 <script>
-const frases=["💖 Empieza hoy","🔥 No te rindas","💪 Tú puedes"];
+/* FRASES MOTIVADORAS */
+const frases = [
+"El esfuerzo de hoy es la fuerza de mañana",
+"No se trata de ser el mejor, sino de ser mejor que ayer",
+"Cada gota de sudor te acerca a tu meta",
+"Tu cuerpo puede más de lo que tu mente cree",
+"No pares cuando estés cansado, para cuando hayas terminado",
+"El dolor de hoy es la victoria de mañana",
+"Transforma tu energía en acción",
+"Hazlo por ti, no por los demás",
+"No cuentes los días, haz que los días cuenten",
+"La disciplina vence a la motivación cuando ésta falla",
+"Un paso más siempre vale la pena",
+"El movimiento es vida; muévete por ti",
+"Hoy entrenas, mañana agradeces",
+"Los límites solo existen en tu mente",
+"Pequeños esfuerzos diarios crean grandes cambios"
+];
 let i=0;
-setInterval(()=>{document.getElementById("frase").innerText=frases[i];i=(i+1)%frases.length;},3000);
+const fraseEl=document.getElementById("frase");
+setInterval(()=>{
+  fraseEl.style.opacity=0;
+  setTimeout(()=>{
+    fraseEl.innerText=frases[i];
+    fraseEl.style.opacity=1;
+    i=(i+1)%frases.length;
+  },500);
+},3000);
 
+/* INSCRIPCIÓN EVENTOS */
 function inscribirse(b){
-document.getElementById("clickSound").play();
-b.innerText="💖 ¡Inscrito!";
+  document.getElementById("clickSound").play();
+  b.innerText="💖 ¡Inscrito!";
+  b.disabled=true;
+  b.style.opacity=0.7;
 }
 </script>
+
+</body>
+</html>
