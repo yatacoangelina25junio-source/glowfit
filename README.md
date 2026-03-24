@@ -1,1 +1,1 @@
-# glowfit
+# GlowFit
